@@ -5,7 +5,10 @@
   "author": "",
   "license": "MIT",
   "private": true,
-
+  "scripts": {
+     "dev-client": "yarn workspace client start",
+     "dev-api": "yarn workspace api dev"
+  },
   "packageManager": "yarn@3.1.1",
   "workspaces": {
     "packages": [
