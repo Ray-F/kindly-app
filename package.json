@@ -6,14 +6,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-     "dev-client": "yarn workspace client start",
-     "dev-api": "yarn workspace api dev"
+    "dev-client": "yarn workspace client start",
+    "dev-api": "yarn workspace api dev"
   },
   "packageManager": "yarn@3.1.1",
   "workspaces": {
     "packages": [
-       "packages/client",
-       "packages/api"
+      "packages/client",
+      "packages/api"
     ]
+  },
+  "dependencies": {
+    "@mui/styles": "^5.8.7"
   }
 }
