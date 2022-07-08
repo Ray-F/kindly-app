@@ -1,0 +1,16 @@
+{
+  "name": "hackathon-2022",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+
+  "packageManager": "yarn@3.1.1",
+  "workspaces": {
+    "packages": [
+       "packages/client",
+       "packages/api"
+    ]
+  }
+}
