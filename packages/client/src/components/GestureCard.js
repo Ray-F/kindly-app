@@ -16,8 +16,14 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     margin: "25px",
     left: "25%",
+
+    transition: "background 0.5s",
+
     "&:hover": {
+      cursor: "pointer",
       background: "#00B0BB",
+
+      transition: "background 0.5s",
     },
   },
 
@@ -63,6 +69,7 @@ export default function GestureCard(props) {
 
   const onCompleted = () => {
     setIsClicked(true);
+    props.onComplete();
 
     fetch(`${process.env.REACT_APP_API_ENDPOINT}/dashboard/rand-id/${props.id}`, {
       method: "POST"

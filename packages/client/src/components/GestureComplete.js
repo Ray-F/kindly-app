@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import avatarComplete from "../resources/avatar_completion.png";
 import CloseButton from "../components/CloseButton";
 import styled from "styled-components";
+import ReactConfetti from 'react-confetti';
 
 const GestureComplete = (props) => {
   const [show, setShow] = useState(false);
@@ -61,6 +62,7 @@ const GestureComplete = (props) => {
         opacity: show ? "1" : "0",
       }}
     >
+      <ReactConfetti />
       <Popup>
         <div style={{ marginTop: "50px" }}>
           <h2 style={{ fontSize: "50px" }}>Nice work!</h2>
