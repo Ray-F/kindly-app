@@ -76,7 +76,7 @@ export default function IndexPage() {
         <GestureComplete
           onClose={popupCloseHandler}
           show={visibility}
-          title="Hello Papi"
+          title="Nice work!"
         ></GestureComplete>
 
         <LogInButton />
