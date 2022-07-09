@@ -1,16 +1,15 @@
 import * as express from "express";
 import * as cors from "cors";
-import { MainRouter } from "./route/routes";
+import { MainRouter } from "./route/main.router";
 
 import { Config } from "./util/config";
 import { DIProvider } from "./util/di.provider";
-import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 
 const port = process.env.PORT || 9000;
 
-const diprovider = DIProvider.getInstance();
+const diProvider = DIProvider.getInstance();
 
 app.listen(port, () => {
   console.info(`[INIT] Running environment: ${Config.ENV}`);
