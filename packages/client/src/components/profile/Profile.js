@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-export default function Profile() {
+export default function Profile(props) {
   const classes = useStyles()
   return (
     <div>
@@ -81,8 +81,8 @@ export default function Profile() {
         <img src={outerCircle} className={classes.outer}></img>
         <img src={innerCircle} className={classes.inner}></img>
         <div className={classes.score}>
-          <p className={classes.pointChange}>+ 100</p>
-          <p className={classes.number}>1000</p>
+          <p className={classes.pointChange}>+ {props.pointsChange}</p>
+          <p className={classes.number}>{props.totalPoints}</p>
           <p className={classes.points}>Points</p>
         </div>
         <img src={head} className={classes.avatarImage}></img>
