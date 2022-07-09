@@ -1,8 +1,9 @@
-import React from 'react';
-import { makeStyles } from '@mui/styles';
-import Topbar from '../components/Topbar';
-import GestureCard from '../components/GestureCard';
-import { CardActions } from '@mui/material';
+import React from "react";
+import { makeStyles } from "@mui/styles";
+import Topbar from "../components/Topbar";
+import GestureCard from "../components/GestureCard";
+import styled from "styled-components";
+import LeaderboardCard from "../components/LeaderboardCard";
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -14,28 +15,53 @@ const useStyles: Function = makeStyles(() => ({
   },
 
   cards: {
-    position: 'relative',
+    position: "relative",
     marginLeft: 70,
+  },
+}));
+
+const Container = styled.div`
+  display: grid;
+  position: absolute;
+  top: 80px;
+
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  text-align: center;
+
+  .gesture-section {
+    border: 1px solid red;
+    justify-items: center;
   }
 
-}));
+  .leaderboard-section {
+    border: 1px solid green;
+  }
+`;
 
 export default function DashboardPage() {
   const classes = useStyles();
   return (
     <div className={classes.bodyMain}>
-    <React.Fragment>
-      <Topbar></Topbar>
-      <div className={classes.cards}>
-      <h1 style={{ fontSize: "45px" }}>Daily Gestures</h1>
-      <div className={classes.faces}>
-      <h1 style={{ fontSize: "45px" }}>Leaderboard</h1>
+      <>
+        <Topbar />
+
+        <Container>
+          <div className="gesture-section">
+            <h1 style={{ fontSize: "45px" }}>Daily Gestures</h1>
+            <GestureCard></GestureCard>
+            <GestureCard></GestureCard>
+            <GestureCard></GestureCard>
+          </div>
+
+          <div className="leaderboard-section">
+            <h1 style={{ fontSize: "45px" }}>Leaderboard</h1>
+            <LeaderboardCard size={200} />
+            <LeaderboardCard size={170} />
+            <LeaderboardCard size={120} />
+          </div>
+        </Container>
+      </>
     </div>
-      </div>
-      <GestureCard></GestureCard>
-      <GestureCard></GestureCard>
-      <GestureCard></GestureCard>
-    </React.Fragment>
-    </div>
-  )
+  );
 }
