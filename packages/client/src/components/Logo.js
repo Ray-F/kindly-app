@@ -1,7 +1,5 @@
-export default function LogoImage() {
+import Logo from "../resources/kindlylogo.png";
 
-    return (
-        <div>
-        </div>
-    )
+export default function Logo() {
+  return Logo;
 }
