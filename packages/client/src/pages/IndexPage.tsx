@@ -6,6 +6,7 @@ import standing from "../resources/landing/standing.png";
 import StartButton from "../components/StartButton";
 import LogInButton from "../components/LogInButton";
 import logo from "../resources/kindlylogo.png";
+import GestureComplete from "../components/GestureComplete";
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -25,14 +26,14 @@ const useStyles: Function = makeStyles(() => ({
     marginLeft: 1100,
     marginTop: 250,
 
-    transform: 'scale(0.8)'
+    transform: "scale(0.8)",
   },
 
   standing: {
     position: "absolute",
     marginLeft: 780,
     marginTop: 150,
-    transform: 'scale(0.8)'
+    transform: "scale(0.8)",
   },
 
   content: {
@@ -40,13 +41,13 @@ const useStyles: Function = makeStyles(() => ({
     flexDirection: "column",
     justifyContent: "center",
     height: "100vh",
-
     paddingLeft: 50,
   },
 
   logo: {
-    height: 100,
-    width: 'auto',
+    height: 120,
+    width: 120,
+    opacity: "55%",
     marginRight: 30,
   },
 
@@ -59,9 +60,25 @@ const useStyles: Function = makeStyles(() => ({
 export default function IndexPage() {
   const classes = useStyles();
 
+  const [visibility, setVisibility] = React.useState(false);
+
+  const popupCloseHandler = () => {
+    setVisibility(true);
+  };
+
   return (
     <React.Fragment>
       <div className={classes.bodyMain}>
+        <button onClick={(e) => setVisibility(!visibility)}>
+          Toggle Popup
+        </button>
+
+        <GestureComplete
+          onClose={popupCloseHandler}
+          show={visibility}
+          title="Hello Papi"
+        ></GestureComplete>
+
         <LogInButton />
         <img src={vector} className={classes.vector} />
         <img src={standing} className={classes.standing} />
