@@ -14,7 +14,6 @@ const useStyles: Function = makeStyles(() => ({
     backgroundColor: "#F6FFFE !important",
     position: "relative",
     overflow: "hidden",
-    paddingLeft: 60,
   },
 
   vector: {
@@ -23,13 +22,13 @@ const useStyles: Function = makeStyles(() => ({
 
   sitting: {
     position: "absolute",
-    marginLeft: 1000,
+    marginLeft: 1050,
     marginTop: 250,
   },
 
   standing: {
     position: "absolute",
-    marginLeft: 700,
+    marginLeft: 750,
     marginTop: 150,
   },
 
@@ -38,6 +37,8 @@ const useStyles: Function = makeStyles(() => ({
     flexDirection: "column",
     justifyContent: "center",
     height: "100vh",
+
+    paddingLeft: 50,
   },
 
   logo: {
