@@ -8,6 +8,8 @@ const useStyles = makeStyles((theme) => ({
 root: {
     // outline: '2px blue solid',
     // display: 'inline-block'
+    transform: 'scale(1)',
+    marginBottom: '0px'
 },
 
  rectangle: {
