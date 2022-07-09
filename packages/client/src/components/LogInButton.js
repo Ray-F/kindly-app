@@ -4,23 +4,27 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(() => ({
   button: {
-    color: "#FFFFFF",
-    backgroundColor: "#00B0BB",
+    color: "#00B0BB",
+    backgroundColor: "transparent",
+    border: "4px solid #00B0BB",
     borderRadius: "15px",
-    width: 170,
-    height: 60,
-    marginTop: 50,
+    position: "absolute",
+    top: -60,
+    right: 100,
+    width: 125,
+    height: 50,
+    marginTop: 100,
   },
 }));
 
-export default function StartButton() {
+export default function LogInButton() {
   const classes = useStyles();
   return (
     <Button
       className={classes.button}
       onClick={() => (window.location = "/DashboardPage")}
     >
-      <b>Get Started</b>
+      <b>Log In</b>
     </Button>
   );
 }
