@@ -12,15 +12,15 @@ const useStyles = makeStyles(() => ({
 
   home: {
     position: "absolute",
-    height: 38,
-    marginTop: 16,
+    height: 34,
+    marginTop: 20,
     left: 50,
   },
 
   user: {
     position: "absolute",
     height: 38,
-    marginTop: 16,
+    marginTop: 20,
     right: 50,
   },
 
