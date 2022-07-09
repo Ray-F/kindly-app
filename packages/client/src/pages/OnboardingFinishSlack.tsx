@@ -48,7 +48,7 @@ function OnboardingFinishSlack() {
       <Topbar />
       <Container>
         <BGImage src={bgImage} alt={"background-img"} />
-        <div>
+        <div>l
           <h1>All set up!</h1>
           <ConnectedDesc>
             <p>connected with</p>
