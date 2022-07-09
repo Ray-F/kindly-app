@@ -8,22 +8,30 @@ const Container = styled.div`
   --sizing: ${(props) => props.size + "px"};
   height: var(--sizing);
   width: var(--sizing);
+  
+  transition: left 0.5s, top 0.5s, height 0.5s, width 0.5s;
 
   --positioning: ${(props) => props.position + "%"};
   left: var(--positioning);
+  top: ${(props) => props.positionX + "%"};
 
   .circleIcon {
     position: absolute;
-    background-color: red;
+    background-color: white;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0 20px 20px 0 #aaa;
-    border: 1px solid red;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
   }
 
   .leaderboard-image {
     position: absolute;
+    width: 110%;
+    left: -5%;
+    top: -6%;
+    height: auto;
+    //top: -20px;
+    
   }
 
   .positionOfTheDudes {
@@ -56,16 +64,16 @@ const Container = styled.div`
 
 export default function LeaderboardCard(props) {
   return (
-    <Container size={props.size} position={props.position}>
+    <Container size={props.size} position={props.position} positionX={props.positionX}>
       <div className="circleIcon"></div>
-      <img className="leaderboard-image" alt="bigpp" src={props.image}></img>
+      <img className="leaderboard-image" alt="bigpp" src={props.image} />
       <div className="positionForImage"></div>
       <div className="positionOfTheDudes">
         <div className="bottomBox">
-          <p style={{ fontSize: "14px", color: "white" }}>570 pts</p>
+          <p style={{ fontSize: "14px", color: "white" }}>{props.points} pts</p>
         </div>
         <div className="personsName">
-          <p>Chris Rock</p>
+          <p>{props.name}</p>
         </div>
       </div>
     </Container>

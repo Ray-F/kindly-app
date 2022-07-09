@@ -42,11 +42,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Gesture(props) {
   const classes = useStyles();
+  console.log(props.image);
   return (
     <div className={classes.root}>
-      <img src={props.image} className={classes.image}></img>
+      <img src={props.image} className={classes.image} />
       <p className={classes.text}>{props.text}</p>
-      <img src={rectangle} className={classes.rectangle}></img>
+      <img src={rectangle} className={classes.rectangle} />
 
     </div>
   );

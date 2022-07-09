@@ -38,22 +38,22 @@ const useStyles = makeStyles(() => ({
   },
 
   icon: {
-    height: 10,
-    width: 10,
+    height: '40px',
+    width: 'auto'
   },
 
   bottomBox: {
-    position: "absolute",
+    position: 'absolute',
     right: 10,
     bottom: -10,
     width: 75,
     height: 25,
-    borderRadius: "5px",
-    backgroundColor: "#437B83",
-    alignItems: "center",
-    display: "flex",
-    flexFlow: "row nowrap",
-    justifyContent: "center",
+    borderRadius: '5px',
+    backgroundColor: '#437B83',
+    alignItems: 'center',
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'center',
   },
 }));
 
@@ -72,15 +72,15 @@ export default function GestureCard(props) {
         className={classes.icon}
         alt=" "
         src={props.img}
-        style={{ paddingRight: "20px" }}
-      ></img>
-      <p style={{ fontWeight: "bold" }}>Gimme a coffee bitch</p>
+        style={{ paddingRight: '20px' }}
+      />
+      <p style={{ fontWeight: 'bold' }}>{props.content}</p>
       <div className={classes.bottomBox}>
         <p
           className={classes.description}
-          style={{ fontSize: "10px", color: "white" }}
+          style={{ fontSize: '10px', color: 'white' }}
         >
-          100 Points
+          {props.points} Points
         </p>
       </div>
     </div>

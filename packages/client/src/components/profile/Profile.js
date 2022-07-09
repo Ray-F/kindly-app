@@ -60,9 +60,10 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     zIndex: 1,
     // outline: '2px blue solid',
-    left: '50%',
-    top: '284px',
-    transform: 'translateX(-50%)'
+    left: '48%',
+    top: '250px',
+    transform: 'translateX(-50%) scale(0.9)',
+    filter: 'brightness(1.2)'
   },
 
   profileName: {
@@ -78,14 +79,14 @@ export default function Profile(props) {
   return (
     <div>
       <div className={classes.root}>
-        <img src={outerCircle} className={classes.outer}></img>
-        <img src={innerCircle} className={classes.inner}></img>
+        <img src={outerCircle} className={classes.outer} />
+        <img src={innerCircle} className={classes.inner} />
         <div className={classes.score}>
           <p className={classes.pointChange}>+ {props.pointsChange}</p>
           <p className={classes.number}>{props.totalPoints}</p>
           <p className={classes.points}>Points</p>
         </div>
-        <img src={head} className={classes.avatarImage}></img>
+        <img src={props.animatedProfileUrl} className={classes.avatarImage} />
 
       </div>
     </div>

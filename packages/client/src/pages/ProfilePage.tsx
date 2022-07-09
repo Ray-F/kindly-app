@@ -39,13 +39,12 @@ const useStyles: Function = makeStyles(() => ({
     height: '40vh',
     gridTemplateRows: '110px 110px 110px',
     position: 'relative',
-    right: '20px',
   },
 
   achievementTitle: {
     textAlign: 'center',
     margin: '0 0 20px 0',
-    padding: '0 50px 0 0',
+    padding: '0 30px 0 0',
     fontSize: '25px',
     color: '#437B83',
   },
@@ -70,7 +69,7 @@ const useStyles: Function = makeStyles(() => ({
   avatar: {
     // outline: '2px yellow solid',
     position: 'absolute',
-    top: '140px',
+    top: '120px',
     left: '50%',
     transform: 'translateX(-50%)',
   },
@@ -108,27 +107,31 @@ export default function ProfilePage() {
 
             <div className={classes.profileDescription}>
               <h1 style={{ fontSize: '60px' }}>Hey {data.profileDetails.name}!</h1>
-              <p style={{ marginTop: '-40px', fontSize: '18px' }}>{data.profileDetails.role} @ {data.profileDetails.organisation}</p>
+              <p style={{ marginTop: '-40px', fontSize: '18px', color: '#444' }}>{data.profileDetails.role} @ {data.profileDetails.organisation}</p>
             </div>
 
             <div className={classes.widgets}>
               <div className={classes.gesturesContent}>
                 <h1 className={classes.gestureTitle}>Completed Gestures</h1>
                 <div style={{ float: 'left', marginBottom: '-50px' }}>
-                  <Gesture image={coffee} text={data.completedGestures[0].title} />
+                  <Gesture image={data.completedGestures.at(-3).iconUrl} text={data.completedGestures.at(-3).title} />
                 </div>
                 <div style={{ float: 'right', marginBottom: '-50px' }}>
-                  <Gesture image={paw} text={data.completedGestures[1].title} />
+                  <Gesture image={data.completedGestures.at(-2).iconUrl} text={data.completedGestures.at(-2).title} />
                 </div>
                 <div style={{ float: 'left' }}>
-                  <Gesture image={figure} text={data.completedGestures[2].title} />
+                  <Gesture image={data.completedGestures.at(-1).iconUrl} text={data.completedGestures.at(-1).title} />
                 </div>
               </div>
 
 
               <div className={classes.profileContent}>
                 <div className={classes.avatar}>
-                  <Profile totalPoints={data.profileDetails.totalPoints} pointsChange={data.profileDetails.lastAddition} />
+                  <Profile
+                      totalPoints={data.profileDetails.totalPoints}
+                      pointsChange={data.profileDetails.lastAddition}
+                      animatedProfileUrl={data.profileDetails.animatedUrl}
+                  />
                 </div>
               </div>
 
