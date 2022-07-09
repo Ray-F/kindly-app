@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
@@ -19,6 +19,22 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       background: "#00B0BB",
     },
+  },
+
+  cardClicked: {
+    position: "relative",
+    color: "#29514E",
+    width: 300,
+    height: 150,
+    boxShadow: "10px 0 20px 0 #efefef",
+    borderRadius: "15px",
+    alignItems: "center",
+    display: "flex",
+    flexFlow: "row nowrap",
+    justifyContent: "center",
+    margin: "25px",
+    left: "25%",
+    backgroundColor: "rgb(0, 176, 187, 0.5)",
   },
 
   icon: {
@@ -43,8 +59,15 @@ const useStyles = makeStyles(() => ({
 
 export default function GestureCard(props) {
   const classes = useStyles();
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
-    <div className={classes.card}>
+    <div
+      className={!isClicked ? classes.card : classes.cardClicked}
+      onClick={() => {
+        setIsClicked(!isClicked);
+      }}
+    >
       <img
         className={classes.icon}
         alt=" "
