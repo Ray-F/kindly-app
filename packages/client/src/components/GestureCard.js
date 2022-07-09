@@ -1,8 +1,5 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { flexbox } from "@mui/system";
-import { bottomNavigationActionClasses } from "@mui/material";
-import { yellow } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -19,6 +16,9 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     margin: "25px",
     left: "25%",
+    "&:hover": {
+      background: "#00B0BB",
+    },
   },
 
   icon: {
