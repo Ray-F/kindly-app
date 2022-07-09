@@ -1,7 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import ReactFloaterJs from "react-floaterjs";
 
 const Container = styled.div`
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+
+  transform: translatey(5px);
+  animation: float 2.5s ease-in-out infinite;
+
   display: flex;
   position: relative;
 
