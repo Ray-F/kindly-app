@@ -106,7 +106,7 @@ const addDummyGestures = async () => {
       _id: new ObjectId('62c90e237be07fbf914760f2'),
       title: 'For Devan',
       iconUrl: 'http://localhost:9000/static/high_five_icon.png',
-      points: 570,
+      points: 1170,
     },
   ];
 

@@ -20,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
 
   image: {
     position: 'absolute',
-    marginTop: '65px',
+    width: '30px',
+    height: 'auto',
+    marginTop: '55px',
     marginLeft: '75px',
     zIndex: '2',
   },

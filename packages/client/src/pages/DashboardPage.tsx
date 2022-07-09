@@ -113,8 +113,8 @@ export default function DashboardPage() {
               <div className="circle-bead-on-line"></div>
               <div className="circle-bead-on-line2"></div>
               <div className="circle-bead-on-line3"></div>
-              {data.gestures.map((it) => (
-                  <GestureCard img={it.iconUrl} content={it.name} points={it.points} completed={it.isCompleted} />
+              {data.gestures.map((it: any) => (
+                  <GestureCard img={it.iconUrl} content={it.name} points={it.points} completed={it.isCompleted} id={it.id} />
               ))}
             </div>
 

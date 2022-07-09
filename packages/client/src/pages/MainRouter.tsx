@@ -13,7 +13,7 @@ export default function MainRouter() {
         <Route exact path={"/"} component={IndexPage} />
         <Route exact path={"/profile"} component={ProfilePage} />
         <Route path={"/dashboard"} component={DashboardPage} />
-        <Route path={"/onboarding"} component={OnboardingPage} />
+        <Route exact path={"/onboarding"} component={OnboardingPage} />
         <Route
           exact
           path={"/onboarding/slack"}

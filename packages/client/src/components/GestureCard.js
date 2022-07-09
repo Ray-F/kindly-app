@@ -59,14 +59,22 @@ const useStyles = makeStyles(() => ({
 
 export default function GestureCard(props) {
   const classes = useStyles();
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(props.completed ?? false);
+
+  const onCompleted = () => {
+    setIsClicked(true);
+
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/dashboard/rand-id/${props.id}`, {
+      method: "POST"
+    }).then(() => {
+      console.log("Marked");
+    })
+  }
 
   return (
     <div
       className={!isClicked ? classes.card : classes.cardClicked}
-      onClick={() => {
-        setIsClicked(!isClicked);
-      }}
+      onClick={onCompleted}
     >
       <img
         className={classes.icon}
