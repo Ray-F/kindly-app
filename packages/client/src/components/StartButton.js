@@ -2,13 +2,13 @@ import { makeStyles } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((themes) => ({
+const useStyles = makeStyles(() => ({
   button: {
-    position: "absolute",
     color: "#FFFFFF",
     backgroundColor: "#00B0BB",
-    bottom: 60,
-    width: 140,
+    bottom: 80,
+    width: 150,
+    marginTop: 100,
   },
 }));
 
