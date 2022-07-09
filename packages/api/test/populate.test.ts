@@ -2,6 +2,8 @@ import { DIProvider } from '../src/util/di.provider';
 import { UserDoc } from '../src/dao/user.dao';
 import { GestureDoc } from '../src/dao/gesture.dao';
 import { ObjectId } from 'mongodb';
+import { SlackService } from '../src/service/SlackService';
+import { Config } from '../src/util/config';
 
 const { userRepo, gestureRepo } = DIProvider.getInstance();
 
@@ -79,7 +81,7 @@ const addDummyGestures = async () => {
     {
       _id: new ObjectId('62c8fd95b59d7c0b9ce42206'),
       title: 'For Shena',
-      iconUrl: 'hello_world',
+      iconUrl: '',
       points: 400,
     },
     {
@@ -97,7 +99,7 @@ const addDummyGestures = async () => {
     {
       _id: new ObjectId('62c90df3dce469dc34e881f6'),
       title: 'Some other idea',
-      iconUrl: 'hello_world',
+      iconUrl: '',
       points: 20,
     },
     {
@@ -121,3 +123,11 @@ it('should populate the database with dummy data', async function () {
     addDummyUsers(),
   ]);
 });
+
+
+it('Test send message', async function () {
+  this.timeout(20_000);
+
+  const slackService = new SlackService(Config.SLACK_SIGNING_SECRET, Config.SLACK_BOT_TOKEN, 9002);
+  await slackService.sendMessageToHarshal();
+})
