@@ -1,22 +1,20 @@
-import { makeStyles } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Button = styled.button`
-  
-  --colour-style: #00B0BB;
-  
+  --colour-style: #00b0bb;
+
   color: var(--colour-style);
   border: 3px solid var(--colour-style);
   border-radius: 15px;
   position: absolute;
-  
+
   background-color: transparent;
   top: 40px;
   right: 100px;
   width: 125px;
   height: 50px;
-  
+
   &:hover {
     cursor: pointer;
     background-color: var(--colour-style);
@@ -24,12 +22,9 @@ const Button = styled.button`
   }
 `;
 
-
 export default function LogInButton() {
   return (
-    <Button
-      onClick={() => (window.location = "/dashboard")}
-    >
+    <Button onClick={() => (window.location = "/dashboard")}>
       <b>Log in</b>
     </Button>
   );

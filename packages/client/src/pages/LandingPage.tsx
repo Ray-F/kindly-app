@@ -25,14 +25,14 @@ const useStyles: Function = makeStyles(() => ({
     marginLeft: 1100,
     marginTop: 250,
 
-    transform: 'scale(0.8)'
+    transform: "scale(0.8)",
   },
 
   standing: {
     position: "absolute",
     marginLeft: 780,
     marginTop: 150,
-    transform: 'scale(0.8)'
+    transform: "scale(0.8)",
   },
 
   content: {
@@ -46,7 +46,7 @@ const useStyles: Function = makeStyles(() => ({
 
   logo: {
     height: 100,
-    width: 'auto',
+    width: "auto",
     marginRight: 30,
   },
 
@@ -56,7 +56,7 @@ const useStyles: Function = makeStyles(() => ({
   },
 }));
 
-export default function IndexPage() {
+export default function LandingPage() {
   const classes = useStyles();
 
   return (
@@ -78,7 +78,7 @@ export default function IndexPage() {
           <p style={{ marginBottom: "0", fontSize: "23px", color: "#437B83" }}>
             Fostering lively and sociable workplace environments
           </p>
-          <p style={{ fontSize: "15px", color: "#437B83", width: 640 }}>
+          <p style={{ marginBottom: "0", fontSize: "15px", color: "#437B83" }}>
             Kindly is the best platform to encourage office motivation through
             breaking the mould of the 9-to-5 routine and spicing up life.
           </p>

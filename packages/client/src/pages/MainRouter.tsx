@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import IndexPage from "./IndexPage";
+import LandingPage from "./LandingPage";
 import ProfilePage from "./ProfilePage";
 import DashboardPage from "./DashboardPage";
 import OnboardingFinishSlack from "./OnboardingFinishSlack";
@@ -10,7 +10,7 @@ export default function MainRouter() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={"/"} component={IndexPage} />
+        <Route exact path={"/"} component={LandingPage} />
         <Route exact path={"/profile"} component={ProfilePage} />
         <Route path={"/dashboard"} component={DashboardPage} />
         <Route path={"/onboarding"} component={OnboardingPage} />
@@ -20,7 +20,7 @@ export default function MainRouter() {
           component={OnboardingFinishSlack}
         />
         {/* Default path if nothing matches */}
-        <Route path={"/"} component={IndexPage} />
+        <Route path={"/"} component={LandingPage} />
       </Switch>
     </BrowserRouter>
   );
