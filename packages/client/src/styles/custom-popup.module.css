@@ -31,9 +31,8 @@
 .popup h2 {
   margin-top: 0;
   color: #333;
-  font-size: 30px;
+  font-family: Tahoma, Arial, sans-serif;
 }
-
 .popup .close {
   position: absolute;
   top: 20px;
