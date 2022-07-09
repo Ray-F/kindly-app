@@ -7,6 +7,8 @@ import coffee from '../resources/profile/coffee.png';
 import paw from '../resources/profile/paw.png';
 import figure from '../resources/profile/figure.png';
 import Topbar from '../components/Topbar';
+import Spinner from '../components/Spinner';
+
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -74,6 +76,13 @@ const useStyles: Function = makeStyles(() => ({
     transform: 'translateX(-50%)',
   },
 
+  load: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%) scale(4)'
+  }
+
 }));
 
 export default function ProfilePage() {
@@ -95,7 +104,9 @@ export default function ProfilePage() {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <div className={classes.load}>
+      <Spinner/>
+    </div>;
   } else {
 
     return (

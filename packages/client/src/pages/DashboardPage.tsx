@@ -4,6 +4,7 @@ import Topbar from '../components/Topbar';
 import GestureCard from '../components/GestureCard';
 import styled from 'styled-components';
 import LeaderboardCard from '../components/LeaderboardCard';
+import Spinner from '../components/Spinner';
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -18,6 +19,13 @@ const useStyles: Function = makeStyles(() => ({
     position: 'relative',
     marginLeft: 70,
   },
+
+  load: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%) scale(4)'
+  }
 }));
 
 const Container = styled.div`
@@ -98,7 +106,9 @@ export default function DashboardPage() {
   const classes = useStyles();
 
   if (isLoading) {
-    return <p>Is loading</p>;
+    return <div className={classes.load}>
+      <Spinner/>
+    </div>;
   }
 
 
