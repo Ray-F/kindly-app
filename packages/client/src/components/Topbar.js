@@ -10,9 +10,8 @@ const useStyles = makeStyles(() => ({
     },
   
     user: {
-        justifyContent: 'right',
         marginTop: 28,
-        height: 40,
+        marginRight: 25,
     },
   
     kindly: {   
@@ -23,10 +22,19 @@ const useStyles = makeStyles(() => ({
         marginRight: 8,
     },
 
-    container: {
+    containter: {
         display: "flex",
         flexFlow: "row nowrap",
         width: "100vw",
+        height: "100wh",
+        justifyContent: "center'"
+    },
+
+    containerPT: {
+        display: "flex",
+        flexFlow: "row nowrap",
+        width: "100vw",
+        height: "100wh",
         justifyContent: "center",
     },
 
@@ -41,16 +49,19 @@ export default function Topbar() {
     const classes = useStyles();
     return(
         <nav className={classes.topbar}>
-            <div className={classes.container}>
-                <div>
-                    <img alt="" src={kindly} className={classes.kindly} />
+            <div className={classes.containter}>   
+                <div className={classes.containerPT}>
+                    <div>
+                        <img alt="" src={kindly} className={classes.kindly} />
+                    </div>
+                    <div className={classes.bodyText}>
+                        <h1 style={{ fontSize: "40px",}}>Kindly.</h1>
+                    </div>    
                 </div>
-            <div className={classes.bodyText}><h1 style={{ fontSize: "40px",}}>Kindly.</h1></div>    
                 <div>
-            </div> 
-               <img alt="" src={user} className={classes.user} />
-            </div>
-            
+                <img alt="" src={user} className={classes.user} />
+                </div>
+            </div>     
         </nav>
     )
 }
