@@ -8,8 +8,8 @@ const Container = styled.div`
   --sizing: ${(props) => props.size + "px"};
   height: var(--sizing);
   width: var(--sizing);
-  
-  transition: left 0.5s, top 0.5s, height 0.5s, width 0.5s;
+
+  transition: left 0.75s, top 0.75s, height 0.75s, width 0.75s;
 
   --positioning: ${(props) => props.position + "%"};
   left: var(--positioning);
@@ -31,7 +31,6 @@ const Container = styled.div`
     top: -6%;
     height: auto;
     //top: -20px;
-    
   }
 
   .positionOfTheDudes {
@@ -64,7 +63,11 @@ const Container = styled.div`
 
 export default function LeaderboardCard(props) {
   return (
-    <Container size={props.size} position={props.position} positionX={props.positionX}>
+    <Container
+      size={props.size}
+      position={props.position}
+      positionX={props.positionX}
+    >
       <div className="circleIcon"></div>
       <img className="leaderboard-image" alt="bigpp" src={props.image} />
       <div className="positionForImage"></div>
