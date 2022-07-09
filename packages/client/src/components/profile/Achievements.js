@@ -1,36 +1,47 @@
-import React from "react";
-import medal from "../../resources/profile/medal.png";
-import rectangle from "../../resources/profile/Rectangle.png";
+import React from 'react';
+import medal from '../../resources/profile/medal.png';
+import rectangle from '../../resources/profile/Rectangle.png';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
 
-root: {
-    // outline: '2px blue solid',
-    // display: 'inline-block'
-},
-
- rectangle: {
+  root: {
     position: 'relative',
-    zIndex: '1',
-    // outline: '2px red solid',
- },
+    height: '80px',
+    width: '200px',
+    backgroundColor: 'white',
+    boxShadow: "rgba(0, 0, 0, 0.1) 0 5px 20px 0",
+    borderRadius: "15px"
+  },
 
- medal: {
+  medal: {
+    left: 0,
     position: 'absolute',
-    marginTop: '30px',
-    marginLeft: '50px',
+    marginLeft: '20px',
     zIndex: '2',
- }
+  },
 
-}))
+  text: {
+    top: '50%',
+    transform: 'translateY(-50%)',
+    textAlign: 'left',
+    padding: '0 10px',
+    margin: 0,
+    position: 'absolute',
+    marginLeft: '80px',
+    fontSize: '14px',
+    color: '#29514E',
 
-export default function Achievements() {
-    const classes = useStyles()
-    return (
-        <div className={classes.root}>
-            <img src={medal} className={classes.medal}></img>
-            <img src={rectangle} className={classes.rectangle}></img>  
-        </div>
-    )
+  },
+}));
+
+export default function Achievements(props) {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <p className={classes.text}>{props.content}</p>
+      <img src={medal} className={classes.medal} />
+
+    </div>
+  );
 }
