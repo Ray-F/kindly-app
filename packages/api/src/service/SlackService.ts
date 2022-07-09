@@ -26,7 +26,7 @@ export class SlackService {
       channel: "C03NWEV4V5G",
       text: `*Your daily gestures are ready!*
 
-View the <https://kindly-dev.netlify.app/dashboard|kindly dashboard> to find your gestures for the day.
+View the <http://localhost:3000/dashboard|kindly dashboard> to find your gestures for the day.
 As always, stay happy! 🤗
       `,
       mrkdwn: true
