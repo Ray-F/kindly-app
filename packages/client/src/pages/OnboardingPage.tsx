@@ -70,7 +70,7 @@ function OnboardingPage() {
         <div>
           <h1 style={{ fontSize: "60px" }}>Welcome to Kindly.</h1>
           <p style={{ fontSize: "25px", color: "#437B83", marginTop: "-35px" }}>
-            We're happy you're here!
+            We're glad you're here!
           </p>
         </div>
       </ContainerWelcome>
@@ -78,7 +78,7 @@ function OnboardingPage() {
       <ContainerSignUp>
         <div className="setup">
           <div>
-            <p style={{ fontSize: "25px", color: "#F78849" }}>
+            <p style={{ fontSize: "22px", color: "#F78849" }}>
               Let's get your team set up.
             </p>
           </div>
@@ -93,7 +93,7 @@ function OnboardingPage() {
         </div>
 
         <div className="connectwith">
-          <p style={{ fontSize: "25px", color: "#F78849" }}>
+          <p style={{ fontSize: "22px", color: "#F78849" }}>
             or connect with...
           </p>
           <div>
