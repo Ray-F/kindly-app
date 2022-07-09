@@ -9,7 +9,7 @@ export default function MainRouter() {
     <BrowserRouter>
       <Switch>
         <Route exact path={'/'} component={IndexPage} />
-        <Route path={'/dashboard'} component={DashboardPage} />
+        <Route path={'/DashboardPage'} component={DashboardPage} />
         <Route path={'/'} component={IndexPage} />
       </Switch>
     </BrowserRouter>
