@@ -24,4 +24,6 @@ app.get("/", (req, res) => {
   res.send("You have reached the API endpoint.");
 });
 
+app.use('/static', express.static('public'));
+
 app.use("/", MainRouter);
