@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#00B0BB",
     borderRadius: "15px",
     width: 170,
-    height: 60,
+    height: 55,
     marginTop: 50,
   },
 }));

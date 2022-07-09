@@ -10,9 +10,10 @@ export default function MainRouter() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={"/"} component={OnboardingPage} />
+        <Route exact path={"/"} component={IndexPage} />
         <Route exact path={"/profile"} component={ProfilePage} />
         <Route path={"/dashboard"} component={DashboardPage} />
+        <Route path={"/onboarding"} component={OnboardingPage} />
         <Route
           exact
           path={"/onboarding/slack"}
