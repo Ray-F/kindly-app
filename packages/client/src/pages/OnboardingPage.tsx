@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import teamsLogo from "../resources/onboarding/teams_logo.png";
 import Topbar from "../components/Topbar";
-import { Box } from "@material-ui/core";
+import StartButton from "../components/StartButton";
 
 const ContainerWelcome = styled.div`
   position: absolute;
@@ -18,10 +18,11 @@ const ContainerWelcome = styled.div`
 const ContainerSignUp = styled.div`
   display: grid;
   position: absolute;
-  margin-top: 325px;
+  margin-top: 310px;
 
   grid-template-columns: 1fr 1fr;
   width: 100vw;
+  height: 50vh;
   text-align: left;
 
   > div {
@@ -29,20 +30,31 @@ const ContainerSignUp = styled.div`
   }
 
   .setup {
-    border: 1px solid blue;
-
-    p {
+    border-right: 1px solid #d4d4d4;
+    input {
+      padding: 12px;
+      width: 500px;
+      margin: 5px 0px 5px 0px;
       color: "#BCBCBC";
       border: "1px solid #D4D4D4";
+
+      &::placeholder {
+        color: #bcbcbc;
+      }
+
+      &:focus {
+        border-style: solid;
+        outline: none !important;
+        border-color: #00b0bb;
+      }
     }
   }
 
   .connectwith {
-    border: 1px solid red;
     align-items: center;
 
     img {
-      height: 75px;
+      height: 70px;
       border-radius: 10px;
       box-shadow: #efefef 0 5px 10px 0;
     }
@@ -71,13 +83,12 @@ function OnboardingPage() {
             </p>
           </div>
           <div>
-            <p className="inputtext">name your org</p>
+            <input placeholder="name your org" />
+            <input placeholder="admin email" />
+            <input placeholder="add team by email" />
           </div>
-          <div>
-            <p className="inputtext">admin email</p>
-          </div>
-          <div>
-            <p className="inputtext">add team by email</p>
+          <div style={{ marginTop: "-25px" }}>
+            <StartButton />
           </div>
         </div>
 
