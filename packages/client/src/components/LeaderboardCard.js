@@ -4,12 +4,13 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   position: relative;
-  left: 40%;
+
   --sizing: ${(props) => props.size + "px"};
   height: var(--sizing);
   width: var(--sizing);
 
-  border: 1px solid green;
+  --positioning: ${(props) => props.position + "%"};
+  left: var(--positioning);
 
   .circleIcon {
     position: absolute;
@@ -27,7 +28,7 @@ const Container = styled.div`
 
   .positionOfTheDudes {
     position: absolute;
-    bottom: -70px;
+    bottom: -65px;
     left: 50%;
     width: 100%;
     transform: translateX(-50%);
@@ -36,7 +37,7 @@ const Container = styled.div`
       border-radius: 5px;
       background-color: #f78849;
       padding: 10px;
-      width: 80px;
+      width: 100px;
 
       margin: 0 auto;
 
@@ -55,7 +56,7 @@ const Container = styled.div`
 
 export default function LeaderboardCard(props) {
   return (
-    <Container size={props.size}>
+    <Container size={props.size} position={props.position}>
       <div className="circleIcon"></div>
       <img className="leaderboard-image" alt="bigpp" src={props.image}></img>
       <div className="positionForImage"></div>
