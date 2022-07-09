@@ -76,7 +76,6 @@ export default function LandingPage() {
         <GestureComplete
           onClose={popupCloseHandler}
           show={visibility}
-          title="Nice work!"
         ></GestureComplete>
 
         <LogInButton />

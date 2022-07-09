@@ -13,8 +13,8 @@ const Button = styled.button`
   background-color: var(--colour-style);
   top: 40px;
   right: 100px;
-  width: 170px;
-  height: 57px;
+  width: 200px;
+  height: 50px;
   margin-top: 50px;
 
   &:hover {
@@ -24,10 +24,10 @@ const Button = styled.button`
   }
 `;
 
-export default function StartButton() {
+export default function CloseButton(props) {
   return (
-    <Button onClick={() => (window.location = "/onboarding")}>
-      <b>Get Started</b>
+    <Button onClick={props.onClick}>
+      <b>Close</b>
     </Button>
   );
 }
