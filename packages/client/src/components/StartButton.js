@@ -18,7 +18,7 @@ export default function StartButton() {
   return (
     <Button
       className={classes.button}
-      onClick={() => (window.location = "/DashboardPage")}
+      onClick={() => (window.location = "/onboarding")}
     >
       <b>Get Started</b>
     </Button>
