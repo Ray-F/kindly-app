@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import Topbar from "../components/Topbar";
@@ -6,6 +7,16 @@ import styled from "styled-components";
 import LeaderboardCard from "../components/LeaderboardCard";
 import Spinner from "../components/Spinner";
 import ReactFloaterJs from "react-floaterjs";
+=======
+import React, { useEffect, useState } from 'react';
+import { makeStyles } from '@mui/styles';
+import Topbar from '../components/Topbar';
+import GestureCard from '../components/GestureCard';
+import styled from 'styled-components';
+import LeaderboardCard from '../components/LeaderboardCard';
+import Spinner from '../components/Spinner';
+import GestureComplete from '../components/GestureComplete';
+>>>>>>> master
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -110,16 +121,10 @@ export default function DashboardPage() {
     thirdSize: 140,
     thirdPoints: 0,
 
-    twoPoints: 400,
+    twoPoints: 0,
     twoPos: 60,
     twoPosX: -12,
     twoSize: 200,
-  });
-
-  useEffect(() => {
-    setTimeout(() => {
-      switchPos(100);
-    }, 3000);
   });
 
   const switchPos = (thirdPointAdd: number) => {
@@ -147,20 +152,50 @@ export default function DashboardPage() {
       });
   }, []);
 
+
+  const [gestureVisibility, setGestureVisibility] = React.useState(false);
+
+  const [lastPointAdd, setLastPointAdd] = useState(0);
+
+  const setGestureComplete = (gesture: any) => {
+    setLastPointAdd(gesture.points);
+    setGestureVisibility(true);
+  };
+
+  const onGestureCompleteClose = () => {
+    setGestureVisibility(false);
+    switchPos(lastPointAdd);
+  }
+
   const classes = useStyles();
 
   if (isLoading) {
+<<<<<<< HEAD
     return (
       <div className={classes.load}>
         <Spinner />
       </div>
     );
+=======
+    return <>
+      <Topbar />
+      <div className={classes.load}>
+      <Spinner/>
+    </div>
+      </>
+>>>>>>> master
   }
 
   return (
     <div className={classes.bodyMain}>
       <>
         <Topbar />
+
+        <GestureComplete
+            onClose={onGestureCompleteClose}
+            show={gestureVisibility}
+        />
+
         <Container>
           <div className="gesture-section">
             <h1 style={{ fontSize: "45px" }}>Daily Gestures</h1>
@@ -175,6 +210,7 @@ export default function DashboardPage() {
                 points={it.points}
                 completed={it.isCompleted}
                 id={it.id}
+                onComplete={() => setGestureComplete(it)}
               />
             ))}
           </div>

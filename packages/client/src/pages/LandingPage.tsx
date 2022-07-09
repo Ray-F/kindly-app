@@ -6,7 +6,6 @@ import standing from "../resources/landing/standing.png";
 import StartButton from "../components/StartButton";
 import LogInButton from "../components/LogInButton";
 import logo from "../resources/kindlylogo.png";
-import GestureComplete from "../components/GestureComplete";
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -60,23 +59,10 @@ const useStyles: Function = makeStyles(() => ({
 export default function LandingPage() {
   const classes = useStyles();
 
-  const [visibility, setVisibility] = React.useState(false);
-
-  const popupCloseHandler = () => {
-    setVisibility(true);
-  };
 
   return (
     <React.Fragment>
       <div className={classes.bodyMain}>
-        <button onClick={(e) => setVisibility(!visibility)}>
-          Toggle Popup
-        </button>
-
-        <GestureComplete
-          onClose={popupCloseHandler}
-          show={visibility}
-        ></GestureComplete>
 
         <LogInButton />
         <img src={vector} className={classes.vector} />

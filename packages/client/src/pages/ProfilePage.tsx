@@ -80,8 +80,8 @@ const useStyles: Function = makeStyles(() => ({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%) scale(4)'
-  }
+    transform: 'translate(-50%, -50%) scale(4)',
+  },
 
 }));
 
@@ -104,9 +104,12 @@ export default function ProfilePage() {
   }, []);
 
   if (isLoading) {
-    return <div className={classes.load}>
-      <Spinner/>
-    </div>;
+    return <>
+      <Topbar />
+      <div className={classes.load}>
+        <Spinner />
+      </div>
+    </>;
   } else {
 
     return (
@@ -118,7 +121,11 @@ export default function ProfilePage() {
 
             <div className={classes.profileDescription}>
               <h1 style={{ fontSize: '60px' }}>Hey {data.profileDetails.name}!</h1>
-              <p style={{ marginTop: '-40px', fontSize: '18px', color: '#444' }}>{data.profileDetails.role} @ {data.profileDetails.organisation}</p>
+              <p style={{
+                marginTop: '-40px',
+                fontSize: '18px',
+                color: '#444',
+              }}>{data.profileDetails.role} @ {data.profileDetails.organisation}</p>
             </div>
 
             <div className={classes.widgets}>
