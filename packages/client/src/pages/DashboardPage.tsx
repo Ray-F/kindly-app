@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@mui/styles";
+import Topbar from "../components/Topbar";
+import GestureCard from "../components/GestureCard";
+import styled from "styled-components";
+import LeaderboardCard from "../components/LeaderboardCard";
+import Spinner from "../components/Spinner";
+import ReactFloaterJs from "react-floaterjs";
+=======
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import Topbar from '../components/Topbar';
@@ -6,6 +16,7 @@ import styled from 'styled-components';
 import LeaderboardCard from '../components/LeaderboardCard';
 import Spinner from '../components/Spinner';
 import GestureComplete from '../components/GestureComplete';
+>>>>>>> master
 
 const useStyles: Function = makeStyles(() => ({
   bodyMain: {
@@ -22,11 +33,11 @@ const useStyles: Function = makeStyles(() => ({
   },
 
   load: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%) scale(4)'
-  }
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%) scale(4)",
+  },
 }));
 
 const Container = styled.div`
@@ -159,12 +170,20 @@ export default function DashboardPage() {
   const classes = useStyles();
 
   if (isLoading) {
+<<<<<<< HEAD
+    return (
+      <div className={classes.load}>
+        <Spinner />
+      </div>
+    );
+=======
     return <>
       <Topbar />
       <div className={classes.load}>
       <Spinner/>
     </div>
       </>
+>>>>>>> master
   }
 
   return (
@@ -195,7 +214,6 @@ export default function DashboardPage() {
               />
             ))}
           </div>
-
           <div className="leaderboard-section">
             <h1 style={{ fontSize: "45px" }}>Leaderboard</h1>
             <LeaderboardCard
