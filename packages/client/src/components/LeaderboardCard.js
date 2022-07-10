@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ReactFloaterJs from "react-floaterjs";
 
 const Container = styled.div`
   @keyframes float {
