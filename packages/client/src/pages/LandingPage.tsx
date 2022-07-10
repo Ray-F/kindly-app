@@ -44,8 +44,7 @@ const useStyles: Function = makeStyles(() => ({
   },
 
   logo: {
-    height: 120,
-    width: 120,
+    height: 100,
     opacity: "55%",
     marginRight: 30,
   },
@@ -59,11 +58,9 @@ const useStyles: Function = makeStyles(() => ({
 export default function LandingPage() {
   const classes = useStyles();
 
-
   return (
     <React.Fragment>
       <div className={classes.bodyMain}>
-
         <LogInButton />
         <img src={vector} className={classes.vector} />
         <img src={standing} className={classes.standing} />
