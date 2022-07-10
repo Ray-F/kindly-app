@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import slackBtnMini from "../resources/onboarding/slack_button_big.png";
 import bgImage from "../resources/onboarding/ba_graphic_for_export.png";
@@ -43,6 +43,12 @@ const ConnectedDesc = styled.div`
 `;
 
 function OnboardingFinishSlack() {
+  useEffect(() => {
+    fetch(process.env.REACT_APP_SLACK_ENDPOINT as string, {
+      method: 'POST'
+    }).then((it) => console.log("Slack sent!"));
+  }, []);
+
   return (
     <>
       <Topbar />
